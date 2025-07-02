@@ -1,0 +1,4 @@
+streamlit - interface
+PyMuPDF - read and extract text from PyPDF
+transformers - free transformtions
+torch - required by transformers
