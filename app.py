@@ -121,7 +121,14 @@ with input_tab2:
         placeholder="Paste your article, research paper, notes, or any text you want to analyze...",
         help="You can paste any text content here for AI analysis"
     )
-
+    
+    process_text_btn = st.button(
+        "Process Text", 
+        use_container_width=True,
+        disabled=not user_text or not user_text.strip(),
+        help="Click to start AI analysis of your text"
+    )
+    
 # Processing Logic - Handle both PDF and text input
 raw_text = ""
 processing_source = ""
@@ -133,7 +140,7 @@ if uploaded_file:
     with st.spinner("Extracting text from PDF..."):
         raw_text = extract_text_from_PDF(uploaded_file)
 
-elif user_text and user_text.strip():
+elif user_text and user_text.strip() and process_text_btn:
     st.markdown("---")
     processing_source = "Text Input"
     raw_text = user_text.strip()
