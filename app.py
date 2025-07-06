@@ -138,7 +138,7 @@ if uploaded_file:
     processing_source = "PDF"
     
     with st.spinner("Extracting text from PDF..."):
-        raw_text = extract_text_from_PDF(uploaded_file)
+        raw_text = extract_text_from_PDF(uploaded_file.read())
 
 elif user_text and user_text.strip() and process_text_btn:
     st.markdown("---")
@@ -225,8 +225,11 @@ if raw_text.strip() != "":
                 with st.spinner("Generating structured study notes..."):
                     notes = generate_study_notes(summary)
                 
+                # Display notes in a styled container
+                st.markdown('<div class="study-notes-container">', unsafe_allow_html=True)
                 st.markdown("#### Your Study Notes")
-                st.text_area("", value=notes, height=400, disabled=True)
+                st.text_area("", value=notes, height=400, disabled=True, key="study_notes_display")
+                st.markdown('</div>', unsafe_allow_html=True)
                 
                 st.download_button(
                     label="Download Notes as .txt",
@@ -240,5 +243,26 @@ if raw_text.strip() != "":
                     st.error("No extractable text found in the PDF. Please try a different file.")
                 else:
                     st.info("👆 Please upload a PDF file or enter text above to get started with AI analysis!")
+
+# Force text color in disabled text areas using JavaScript
+st.markdown("""
+<script>
+function forceTextColor() {
+    const textAreas = document.querySelectorAll('textarea[disabled]');
+    textAreas.forEach(textarea => {
+        textarea.style.color = '#000000';
+        textarea.style.webkitTextFillColor = '#000000';
+        textarea.style.background = '#ffffff';
+    });
+}
+
+// Run after page loads
+setTimeout(forceTextColor, 100);
+
+// Run on mutation (when content changes)
+const observer = new MutationObserver(forceTextColor);
+observer.observe(document.body, { childList: true, subtree: true });
+</script>
+""", unsafe_allow_html=True)
 
 

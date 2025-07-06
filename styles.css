@@ -16,7 +16,34 @@
     border: 1px solid #e9ecef;
 }
 
-.main-header h1 {
+/* Disabled text area styling for study notes */
+.stTextArea > div > div > textarea[disabled],
+.stTextArea > div > div > textarea[readonly] {
+    background: #ffffff !important;
+    border: 2px solid #e5e7eb !important;
+    border-radius: 8px !important;
+    color: #000000 !important;
+    padding: 0.75rem !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #000000 !important;
+    text-shadow: none !important;
+}
+
+/* Additional specific targeting for study notes text area */
+textarea[data-testid="stTextArea-study_notes_display"] {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    background: #ffffff !important;
+}
+
+/* Force black text in all disabled text areas */
+.stTextArea textarea[disabled] {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+}h1 {
     color: #2c3e50;
     font-size: 2.8rem;
     font-weight: 800;
@@ -104,7 +131,7 @@
     text-align: center;
     font-weight: 600;
     border: 3.5px solid;
-    min-height: 140px;
+    max-height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -445,4 +472,94 @@
 .element-container .stMarkdown p {
     color: #374151 !important;
     line-height: 1.6;
+}
+
+/* Disabled text area styling for study notes */
+.stTextArea > div > div > textarea[disabled],
+.stTextArea > div > div > textarea[readonly] {
+    background: #f8fafc !important;
+    border: 2px solid #e5e7eb !important;
+    border-radius: 8px !important;
+    color: #000000 !important;
+    padding: 0.75rem !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    opacity: 1 !important;
+}
+
+/* Additional specific targeting for study notes text area */
+textarea[data-testid="study_notes_display"],
+textarea[key="study_notes_display"] {
+    color: #000000 !important;
+    background: #ffffff !important;
+    border: 2px solid #e5e7eb !important;
+}
+
+/* Force black text color for any disabled textarea */
+div[data-testid="stTextArea"] textarea[disabled] {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+}
+
+/* Override Streamlit's default blue text in disabled areas */
+.stTextArea textarea[disabled] {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+}
+
+/* Study notes container styling */
+.study-notes-container {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.study-notes-container h4 {
+    color: #1e40af !important;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Force black text specifically for study notes display */
+div[data-testid="stTextArea"] textarea[data-testid="textArea_undefined"] {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    background: #ffffff !important;
+    border: 2px solid #e5e7eb !important;
+    border-radius: 8px !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    padding: 1rem !important;
+}
+
+/* Alternative targeting for study notes text area */
+.stTextArea textarea[disabled] {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    background: #ffffff !important;
+}
+
+/* Ensure all text in the app is visible */
+.main .block-container .element-container .stMarkdown {
+    color: #374151 !important;
+}
+
+.main .block-container .element-container .stText {
+    color: #374151 !important;
+}
+
+/* Override any default Streamlit text colors that might be invisible */
+div[data-testid="stMarkdownContainer"] p,
+div[data-testid="stMarkdownContainer"] h1,
+div[data-testid="stMarkdownContainer"] h2,
+div[data-testid="stMarkdownContainer"] h3,
+div[data-testid="stMarkdownContainer"] h4,
+div[data-testid="stMarkdownContainer"] h5,
+div[data-testid="stMarkdownContainer"] h6 {
+    color: #374151 !important;
 }
