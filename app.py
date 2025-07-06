@@ -37,36 +37,63 @@ st.markdown("""
 
 # Feature Cards Section - Interactive feature overview
 st.markdown("""
-<div class="features-container">
+<div class="features-section">
     <h3>Features</h3>
-    <div class="features-grid">
-        <div class="feature-card extract-card">
-            <h3>📄 Extract</h3>
-            <p>Advanced PDF text extraction</p>
-        </div>
-        <div class="feature-card summarize-card">
-            <h3>📝 Summarize</h3>
-            <p>AI-powered summaries</p>
-        </div>
-        <div class="feature-card ask-card">
-            <h3>❓ Ask</h3>
-            <p>Interactive Q&A system</p>
-        </div>
-        <div class="feature-card test-card">
-            <h3>🎯 Test</h3>
-            <p>Challenge your knowledge</p>
-        </div>
-        <div class="feature-card notes-card">
-            <h3>📚 Notes</h3>
-            <p>Generate study materials</p>
-        </div>
-        <div class="feature-card text-input-card">
-            <h3>✍️ Text Input</h3>
-            <p>Direct text analysis</p>
-        </div>
-    </div>
 </div>
 """, unsafe_allow_html=True)
+
+# Use responsive columns with consistent spacing
+col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1], gap="medium")
+
+with col1:
+    st.markdown("""
+    <div class="feature-card extract-card">
+        <h3>📄 Extract</h3>
+        <p>Advanced PDF text extraction</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown("""
+    <div class="feature-card summarize-card">
+        <h3>📝 Summarize</h3>
+        <p>AI-powered summaries</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col3:
+    st.markdown("""
+    <div class="feature-card ask-card">
+        <h3>❓ Ask</h3>
+        <p>Interactive Q&A system</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col4:
+    st.markdown("""
+    <div class="feature-card test-card">
+        <h3>🎯 Test</h3>
+        <p>Challenge your knowledge</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col5:
+    st.markdown("""
+    <div class="feature-card notes-card">
+        <h3>📚 Notes</h3>
+        <p>Generate study materials</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col6:
+    st.markdown("""
+    <div class="feature-card text-input-card">
+        <h3>✍️ Text Input</h3>
+        <p>Direct text analysis</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.markdown("</div>", unsafe_allow_html=True)
 
 # Input Section - Multiple ways to provide content
 st.markdown("""
@@ -144,16 +171,20 @@ if raw_text.strip() != "":
             st.markdown("### Ask Anything About Your Document")
             user_question = st.text_input("Type your question here...", placeholder="What is the main topic of this document?")
             
-            if user_question:
-                with st.spinner("Finding the best answer..."):
-                    answer = answer_question(user_question, raw_text)
-                
-                st.markdown(f"""
-                <div class="success-message">
-                    <h5>AI Answer:</h5>
-                    <p>{answer}</p>
-                </div>
-                """, unsafe_allow_html=True)
+            # Single button for getting answers
+            if st.button("Get Answer", use_container_width=True, help="Get an answer to your question"):
+                if user_question:
+                    with st.spinner("Finding the best answer..."):
+                        answer = answer_question(user_question, raw_text)
+                    
+                    st.markdown(f"""
+                    <div class="success-message">
+                        <h4>� Answer:</h4>
+                        <p>{answer}</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+                else:
+                    st.warning("Please enter a question first to get an answer.")
 
         with tab3:
             st.markdown("### Test Your Understanding")
@@ -213,11 +244,11 @@ if raw_text.strip() != "":
                     mime="text/plain",
                     use_container_width=True
                 )
-            else:
-                if processing_source == "PDF":
-                    st.error("No extractable text found in the PDF. Please try a different file.")
-                else:
-                    st.info("👆 Please upload a PDF file or enter text above to get started with AI analysis!")
+else:
+    if processing_source == "PDF":
+        st.error("No extractable text found in the PDF. Please try a different file.")
+    else:
+        st.info("👆 Please upload a PDF file or enter text above to get started with AI analysis!")
 
 # Force text color in disabled text areas using JavaScript
 st.markdown("""

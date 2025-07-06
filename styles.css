@@ -43,7 +43,9 @@ textarea[data-testid="stTextArea-study_notes_display"] {
 .stTextArea textarea[disabled] {
     color: #000000 !important;
     -webkit-text-fill-color: #000000 !important;
-}h1 {
+}
+
+.main-header h1 {
     color: #2c3e50;
     font-size: 2.8rem;
     font-weight: 800;
@@ -103,7 +105,7 @@ textarea[data-testid="stTextArea-study_notes_display"] {
 
 
 /* Feature Cards Section Container */
-.features-container {
+/* .features-container {
     background: #ffffff;
     padding: 2rem;
     border-radius: 20px;
@@ -111,106 +113,50 @@ textarea[data-testid="stTextArea-study_notes_display"] {
     max-width: 1200px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border: 1px solid #e9ecef;
-}
+} */
 
-.features-container h3 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
+/* .features-container h3 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 1.5em;
     font-weight: 600;
     color: #333;
     margin-top: 0;
-}
+} */
 
-/* Feature cards - responsive with consistent dimensions */
+/* Feature cards - responsive and consistent sizing */
 .feature-card {
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
     border-radius: 15px;
+    margin: 0.5rem 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-weight: 600;
-    border: 3.5px solid;
-    /* Fixed dimensions for consistency */
-    height: 180px;
+    border: 3px solid;
+    height: 160px;
+    min-height: 160px;
+    max-height: 160px;
     width: 100%;
-    max-width: 280px;
-    min-width: 220px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-sizing: border-box;
-    /* Responsive flex behavior */
-    flex: 1 1 auto;
+    overflow: hidden;
+    position: relative;
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive grid container for feature cards */
-.features-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 1.5rem;
-    margin: 2rem 0;
-    padding: 0 1rem;
-}
-
-/* Desktop: 3 cards per row */
+/* Responsive sizing for different screen sizes */
 @media (min-width: 1200px) {
-    .features-grid {
-        justify-content: space-between;
-        max-width: 1200px;
-        margin: 2rem auto;
-    }
-    
     .feature-card {
-        flex: 0 1 calc(33.333% - 1rem);
-        max-width: 320px;
-    }
-}
-
-/* Large tablets/small desktops: 3 cards per row */
-@media (min-width: 900px) and (max-width: 1199px) {
-    .feature-card {
-        flex: 0 1 calc(33.333% - 1rem);
-        max-width: 280px;
-    }
-}
-
-/* Tablets: 2 cards per row */
-@media (min-width: 600px) and (max-width: 899px) {
-    .feature-card {
-        flex: 0 1 calc(50% - 1rem);
-        max-width: 300px;
         height: 160px;
-    }
-    
-    .features-grid {
-        gap: 1rem;
-    }
-}
-
-/* Mobile: 1 card per row */
-@media (max-width: 599px) {
-    .feature-card {
-        flex: 1 1 100%;
-        max-width: 100%;
-        height: 140px;
-        padding: 1.25rem;
-        margin: 0;
-    }
-    
-    .features-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        padding: 0 0.5rem;
+        padding: 1.5rem 1rem;
     }
     
     .feature-card h3 {
@@ -223,11 +169,63 @@ textarea[data-testid="stTextArea-study_notes_display"] {
     }
 }
 
-/* Individual feature card colors with good contrast */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .feature-card {
+        height: 150px;
+        padding: 1.3rem 0.8rem;
+    }
+    
+    .feature-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .feature-card {
+        height: 140px;
+        padding: 1.2rem 0.7rem;
+        margin: 0.3rem 0;
+    }
+    
+    .feature-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .feature-card {
+        height: 130px;
+        padding: 1rem 0.5rem;
+        margin: 0.25rem 0;
+        border-radius: 12px;
+    }
+    
+    .feature-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.75rem;
+        line-height: 1.1;
+    }
+}
+
+/* Individual feature card colors matching the image exactly */
 .extract-card {
     background: #dbe2ee;
     border-color: #0b4192;
-    color: #0b4192;
+    color: #bfcde2;
 }
 
 .summarize-card {
@@ -260,16 +258,94 @@ textarea[data-testid="stTextArea-study_notes_display"] {
     color: #c65d00;
 }
 
-.feature-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: 800;
+
+
+/* Responsive text sizing for feature cards */
+@media (min-width: 1200px) {
+    .feature-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.85rem;
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
 }
 
-.feature-card p {
-    font-size: 1rem;
-    opacity: 0.8;
-    margin: 0;
+@media (max-width: 1199px) and (min-width: 992px) {
+    .feature-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .feature-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .feature-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.7rem;
+    }
+}
+
+/* Responsive text sizing */
+@media (max-width: 1200px) {
+    .feature-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.15rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.75rem;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.1rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.7rem;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+    }
 }
 
 /* Metric cards for displaying file information */
@@ -444,13 +520,13 @@ textarea[data-testid="stTextArea-study_notes_display"] {
 }
 
 .sidebar .sidebar-content {
-    color: #800f2f !important;
+    color: #800f2c !important;
     font-weight: bold;
 }
 
 /* Sidebar elements styling */
 .css-1d391kg .css-10trblm {
-    color: #800f2f !important;
+    color: #800f2c !important;
     font-weight: bold;
 }
 
@@ -487,13 +563,13 @@ textarea[data-testid="stTextArea-study_notes_display"] {
 
 /* Sidebar list items */
 .css-1d391kg li {
-    color: #800f2f !important;
+    color: #800f2c !important;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(255, 240, 243, 0.5);
 }
 
 .css-1d391kg p {
-    color: #800f2f !important;
+    color: #800f2c !important;
     font-weight: bold;
 }
 
@@ -643,4 +719,112 @@ div[data-testid="stMarkdownContainer"] h4,
 div[data-testid="stMarkdownContainer"] h5,
 div[data-testid="stMarkdownContainer"] h6 {
     color: #374151 !important;
+}
+
+/* Streamlit columns responsive styling */
+[data-testid="column"] {
+    display: flex !important;
+    align-items: stretch !important;
+    padding: 0.25rem !important;
+}
+
+/* Ensure consistent spacing on mobile */
+@media (max-width: 768px) {
+    [data-testid="column"] {
+        padding: 0.15rem !important;
+    }
+    
+    .features-section {
+        padding: 1.5rem;
+        margin: 1rem auto;
+    }
+    
+    .features-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    [data-testid="column"] {
+        padding: 0.1rem !important;
+    }
+    
+    .features-section {
+        padding: 1rem;
+        margin: 0.5rem auto;
+    }
+    
+    .features-section h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Force consistent card alignment */
+.stColumn > div {
+    height: 100% !important;
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+.stColumn > div > div {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Alternative grid-based layout for more consistent feature cards */
+@media (min-width: 769px) {
+    div[data-testid="column"]:nth-child(1),
+    div[data-testid="column"]:nth-child(2),
+    div[data-testid="column"]:nth-child(3),
+    div[data-testid="column"]:nth-child(4),
+    div[data-testid="column"]:nth-child(5),
+    div[data-testid="column"]:nth-child(6) {
+        flex: 1 1 16.66% !important;
+        min-width: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    div[data-testid="column"]:nth-child(1),
+    div[data-testid="column"]:nth-child(2),
+    div[data-testid="column"]:nth-child(3) {
+        flex: 1 1 33.33% !important;
+    }
+    
+    div[data-testid="column"]:nth-child(4),
+    div[data-testid="column"]:nth-child(5),
+    div[data-testid="column"]:nth-child(6) {
+        flex: 1 1 33.33% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    div[data-testid="column"] {
+        flex: 1 1 50% !important;
+        max-width: 50% !important;
+    }
+}
+
+/* Enhanced hover effects for better UX */
+.feature-card {
+    cursor: pointer;
+    user-select: none;
+}
+
+.feature-card:hover {
+    animation: cardPulse 0.3s ease-in-out;
+}
+
+@keyframes cardPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Ensure text doesn't overflow on small screens */
+.feature-card * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
