@@ -48,19 +48,19 @@ def generate_questions(summary_text):
     return templates[:3]
 
 
-# Answer Evaluation
+# Answer Evaluation - Compares user answers with reference context using TF-IDF similarity
 def evaluate_answer(user_answer, reference_context):
     vectorizer = TfidfVectorizer().fit_transform([user_answer, reference_context])
     score = cosine_similarity(vectorizer[0], vectorizer[1])[0][0]
     if score > 0.7:
-        return f"✅ Good answer! (Score: {score:.2f})"
+        return f"Good answer! (Score: {score:.2f})"
     elif score > 0.4:
-        return f"⚠️ Partial match. Try adding more detail. (Score: {score:.2f})"
+        return f"Partial match. Try adding more detail. (Score: {score:.2f})"
     else:
-        return f"❌ Not quite right. Recheck the material. (Score: {score:.2f})"
+        return f"Not quite right. Recheck the material. (Score: {score:.2f})"
 
 
-#day 4: notes generator
+# Study Notes Generator - Creates structured notes from summary text
 def generate_study_notes(summary):
     # Basic NLP structure from summary
     notes = []
@@ -79,6 +79,6 @@ def generate_study_notes(summary):
                 notes.append(f" {line}")
 
     # Add a final takeaway
-    notes.append("\n✅ Key Takeaway: Understand the above points for exam/interview prep.")
+    notes.append("\nKey Takeaway: Understand the above points for exam/interview prep.")
 
     return "\n".join(notes)

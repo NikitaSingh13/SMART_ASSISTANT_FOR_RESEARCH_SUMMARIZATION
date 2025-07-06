@@ -1,4 +1,6 @@
-streamlit - interface
-PyMuPDF - read and extract text from PyPDF
-transformers - free transformtions
-torch - required by transformers
+streamlit>=1.28.0
+PyMuPDF>=1.23.0
+transformers>=4.30.0
+torch>=2.0.0
+scikit-learn>=1.3.0
+numpy>=1.24.0

@@ -1,0 +1,448 @@
+/* Clean gray background matching the image */
+.stApp {
+    background: #fffcfc;
+}
+
+/* White box container for header content - positioned below the gray area */
+.main-header {
+    background: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    margin: 3em auto 3rem auto;
+    max-width: 1500px;
+    text-align: center;
+    color: #1f2937;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+}
+
+.main-header h1 {
+    color: #2c3e50;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.main-header p {
+    color: #6c7b7f;
+    font-size: 1.2rem;
+}
+
+
+/* About section styling - white card matching features section */
+.about-section {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    margin: 2rem auto;
+    max-width: 1200px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+}
+
+.about-header {
+    color: #2d0dbb;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+    color: #2d0dbb;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+/* Hover effect for .main-header */
+.main-header:hover {
+    border: 2px solid #3b82f6; /* subtle blue border */
+    box-shadow: 0 6px 24px rgba(59, 130, 246, 0.15); /* soft blue shadow */
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for .about-section */
+.about-section:hover {
+    border: 2px solid #3b82f6; /* subtle blue border */
+    box-shadow: 0 6px 24px rgba(59, 130, 246, 0.15); /* soft blue shadow */
+    transition: all 0.3s ease;
+}
+
+
+
+/* Feature Cards Section Container */
+/* .features-container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    margin: 2rem auto;
+    max-width: 1200px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+} */
+
+/* .features-container h3 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #333;
+    margin-top: 0;
+} */
+
+/* Feature cards - exact colors from image */
+.feature-card {
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-weight: 600;
+    border: 3.5px solid;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Individual feature card colors matching the image exactly */
+.extract-card {
+    background: #dbe2ee;
+    border-color: #0b4192;
+    color: #bfcde2;
+}
+
+.summarize-card {
+    background: #d1e7dd;
+    border-color: #198754;
+    color: #146c43;
+}
+
+.ask-card {
+    background: #fff3cd;
+    border-color: #ffc107;
+    color: #b45309;
+}
+
+.test-card {
+    background: #f8d7da;
+    border-color: #dc3545;
+    color: #b02a37;
+}
+
+.notes-card {
+    background: #f1e0f7;
+    border-color: #811bb1;
+    color: #59359a;
+}
+
+.text-input-card {
+    background: #ffe4c4;
+    border-color: #fd7e14;
+    color: #c65d00;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* Metric cards for displaying file information */
+.metric-card {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0.8rem 0;
+    color: #374151;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.metric-card h4 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.metric-card p {
+    color: #6b7280;
+    margin: 0.5rem 0;
+}
+
+/* Success message styling for summary display */
+.success-message {
+    background: #f0f9ff;
+    color: #1e40af;
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid #3b82f6;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.success-message h4 {
+    color: #1e40af;
+    margin-bottom: 1rem;
+}
+
+.success-message p {
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+/* Question cards for challenge mode */
+.question-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    color: #374151;
+}
+
+.question-card h4 {
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.question-card p {
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Button styling with clean appearance */
+.stButton > button {
+    background: #3b82f6;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stButton > button:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Tab styling for navigation */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px;
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: #ffffff;
+    color: #374151;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.stTabs [aria-selected="true"] {
+    background: #3b82f6;
+    color: #ffffff;
+    border-color: #3b82f6;
+}
+
+/* Input field styling */
+.stTextInput > div > div > input {
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    color: #374151;
+    padding: 0.75rem;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.stTextArea > div > div > textarea {
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    color: #374151;
+    padding: 0.75rem;
+}
+
+.stTextArea > div > div > textarea:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Progress bar styling */
+.stProgress > div > div > div {
+    background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+    height: 8px;
+    border-radius: 4px;
+}
+
+/* Metrics container styling */
+[data-testid="metric-container"] {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+[data-testid="metric-container"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar styling with professional appearance */
+.css-1d391kg {
+    background: linear-gradient(180deg, #fff0f3 0%, #ffccd5 25%, #ffb3c1 50%, #ff8fa3 75%, #ff758f 100%) !important;
+    animation: sidebarShift 10s ease infinite;
+}
+
+@keyframes sidebarShift {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.sidebar .sidebar-content {
+    color: #800f2f !important;
+    font-weight: bold;
+}
+
+/* Sidebar elements styling */
+.css-1d391kg .css-10trblm {
+    color: #800f2f !important;
+    font-weight: bold;
+}
+
+.css-1d391kg h3 {
+    color: #590d22 !important;
+    text-shadow: 1px 1px 2px rgba(255, 240, 243, 0.8);
+    font-weight: 900;
+    animation: sidebarHeaderGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes sidebarHeaderGlow {
+    0% { text-shadow: 1px 1px 2px rgba(255, 240, 243, 0.8); }
+    100% { text-shadow: 1px 1px 2px rgba(255, 240, 243, 0.8), 0 0 10px rgba(89, 13, 34, 0.5); }
+}
+
+/* Sidebar metrics styling */
+.css-1d391kg [data-testid="metric-container"] {
+    background: linear-gradient(135deg, #590d22 0%, #800f2f 100%) !important;
+    border: 2px solid #fff0f3 !important;
+    color: #fff0f3 !important;
+    box-shadow: 0 5px 15px rgba(89, 13, 34, 0.5);
+    animation: sidebarMetricPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes sidebarMetricPulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.02); }
+}
+
+.css-1d391kg [data-testid="metric-container"] [data-testid="metric-container"] div {
+    color: #fff0f3 !important;
+    font-weight: bold !important;
+}
+
+/* Sidebar list items */
+.css-1d391kg li {
+    color: #800f2f !important;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255, 240, 243, 0.5);
+}
+
+.css-1d391kg p {
+    color: #800f2f !important;
+    font-weight: bold;
+}
+
+/* Spinner styling */
+.stSpinner > div {
+    border-top-color: #3b82f6 !important;
+    border-right-color: #3b82f6 !important;
+    border-bottom-color: #3b82f6 !important;
+    border-left-color: #3b82f6 !important;
+}
+
+/* Section headers matching the image style */
+.section-header {
+    color: #1e5f99;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Upload section styling to match image */
+.upload-section {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;                 
+    width: 800px;                
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+    text-align: left;
+}
+
+
+.upload-section h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.upload-section p {
+    color: #6c7b7f;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* File uploader styling */
+.stFileUploader {
+    background: transparent !important;
+}
+
+/* Text content styling for better readability */
+.stMarkdown, .stText, p, h1, h2, h3, h4, h5, h6 {
+    color: #374151 !important;
+}
+
+.element-container .stMarkdown p {
+    color: #374151 !important;
+    line-height: 1.6;
+}
