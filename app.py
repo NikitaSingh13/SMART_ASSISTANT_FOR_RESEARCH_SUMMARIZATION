@@ -39,59 +39,34 @@ st.markdown("""
 st.markdown("""
 <div class="features-container">
     <h3>Features</h3>
+    <div class="features-grid">
+        <div class="feature-card extract-card">
+            <h3>📄 Extract</h3>
+            <p>Advanced PDF text extraction</p>
+        </div>
+        <div class="feature-card summarize-card">
+            <h3>📝 Summarize</h3>
+            <p>AI-powered summaries</p>
+        </div>
+        <div class="feature-card ask-card">
+            <h3>❓ Ask</h3>
+            <p>Interactive Q&A system</p>
+        </div>
+        <div class="feature-card test-card">
+            <h3>🎯 Test</h3>
+            <p>Challenge your knowledge</p>
+        </div>
+        <div class="feature-card notes-card">
+            <h3>📚 Notes</h3>
+            <p>Generate study materials</p>
+        </div>
+        <div class="feature-card text-input-card">
+            <h3>✍️ Text Input</h3>
+            <p>Direct text analysis</p>
+        </div>
+    </div>
+</div>
 """, unsafe_allow_html=True)
-
-col1, col2, col3, col4, col5, col6 = st.columns(6)
-
-with col1:
-    st.markdown("""
-    <div class="feature-card extract-card">
-        <h3>📄 Extract</h3>
-        <p>Advanced PDF text extraction</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col2:
-    st.markdown("""
-    <div class="feature-card summarize-card">
-        <h3>📝 Summarize</h3>
-        <p>AI-powered summaries</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col3:
-    st.markdown("""
-    <div class="feature-card ask-card">
-        <h3>❓ Ask</h3>
-        <p>Interactive Q&A system</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col4:
-    st.markdown("""
-    <div class="feature-card test-card">
-        <h3>🎯 Test</h3>
-        <p>Challenge your knowledge</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col5:
-    st.markdown("""
-    <div class="feature-card notes-card">
-        <h3>📚 Notes</h3>
-        <p>Generate study materials</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col6:
-    st.markdown("""
-    <div class="feature-card text-input-card">
-        <h3>✍️ Text Input</h3>
-        <p>Direct text analysis</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-st.markdown("</div>", unsafe_allow_html=True)
 
 # Input Section - Multiple ways to provide content
 st.markdown("""
