@@ -1,7 +1,5 @@
 # Smart Research Assistant
 
-🌐 [Live Demo](https://smart-assistant-for-research-summarization.streamlit.app/)
-
 An AI-powered research companion that transforms your document analysis workflow with intelligent PDF processing, text summarization, and interactive learning features.
 
 
